@@ -1,18 +1,85 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+<html lang="es"
+      xmlns="http://www.w3.org/1999/xhtml"
       xmlns:f="jakarta.faces.core"
       xmlns:h="jakarta.faces.html">
-<h:head><title>REST Call</title></h:head>
-<h:body>
-    <h:form id="form">
-        <!-- message below the button (block-level) -->
-        <h:panelGroup id="msg" layout="block" style="margin-top:12px;">
-            <h:outputText value="#{userBean.message}"/>
-        </h:panelGroup>
 
-        <h:commandButton value="Call Rest" action="#{userBean.restClient}">
-            <f:ajax render="msg"/>
-        </h:commandButton>
-    </h:form>
+<h:head>
+    <title>DEBER 1 - JSF + REST</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f6f7fb;
+        }
+        .card {
+            max-width: 520px;
+            margin: 80px auto;
+            background: white;
+            padding: 28px 26px;
+            border-radius: 14px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+        .title {
+            margin: 0 0 8px 0;
+            font-size: 20px;
+        }
+        .subtitle {
+            margin: 0 0 18px 0;
+            color: #555;
+            font-size: 14px;
+        }
+        .btn {
+            border: 0;
+            padding: 12px 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 600;
+            background: #2563eb;
+            color: white;
+            transition: transform 0.05s ease, opacity 0.2s ease;
+        }
+        .btn:hover { opacity: 0.92; }
+        .btn:active { transform: scale(0.98); }
+        .msg {
+            margin-top: 18px;
+            padding: 12px;
+            border-radius: 10px;
+            background: #f1f5f9;
+            min-height: 24px;
+            color: #111;
+            word-wrap: break-word;
+        }
+        .footer {
+            margin-top: 18px;
+            color: #666;
+            font-size: 12px;
+        }
+    </style>
+</h:head>
+
+<h:body>
+    <div class="card">
+        <h1 class="title">Cliente JSF</h1>
+        <p class="subtitle">Al hacer clic, el CDI Bean llama al servicio REST y muestra la respuesta.</p>
+
+        <h:form id="form">
+            <h:commandButton value="Obtener mensaje del servidor"
+                             action="#{userBean.restClient}"
+                             styleClass="btn">
+                <f:ajax render="msg"/>
+            </h:commandButton>
+
+            <h:panelGroup id="msg" layout="block" styleClass="msg">
+                <h:outputText value="#{userBean.message}" />
+            </h:panelGroup>
+        </h:form>
+
+        <div class="footer">
+            Elaborado por Pablo Alvarado y Andrés Proaño
+        </div>
+    </div>
 </h:body>
 </html>

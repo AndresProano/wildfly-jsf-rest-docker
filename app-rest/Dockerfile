@@ -1,4 +1,4 @@
-FROM quay.io/wildfly/wildfly:latest
+FROM quay.io/wildfly/wildfly:37.0.0.Final-jdk21
 
 COPY target/app-rest.war /opt/jboss/wildfly/standalone/deployments/
 

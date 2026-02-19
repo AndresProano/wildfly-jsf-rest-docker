@@ -1,6 +1,8 @@
 services:
   rest-service:
-    image: byandyx/deber1-rest-server:latest
+    image: pabseb/deber-1_app-rest:1.0
+    build: ./app-rest
+    container_name: rest-container
     ports:
       - "8081:8080"
     healthcheck:
@@ -10,7 +12,9 @@ services:
       retries: 12
 
   jsf-service:
-    image: byandyx/deber1-jsf-server:latest
+    image: pabseb/deber-1_app-jsf:1.0
+    build: ./app-jsf
+    container_name: jsf-container
     ports:
       - "8080:8080"
     environment:

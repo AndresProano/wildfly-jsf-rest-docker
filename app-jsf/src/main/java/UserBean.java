@@ -15,8 +15,10 @@ public class UserBean implements Serializable {
     public void restClient() {
         String baseUrl = System.getenv().getOrDefault(
                 "REST_BASE_URL",
-                "http://localhost:8080/app-rest/api"
+                "http://localhost:8081/app-rest/api"
         );
+
+
         String url = baseUrl.endsWith("/") ? baseUrl + "saludo" : baseUrl + "/saludo";
 
         try {
