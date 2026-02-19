@@ -12,7 +12,7 @@ public class SaludoBean implements Serializable {
     public void llamarAlRest() {
         try {
             Client client = ClientBuilder.newClient();
-            this.mensajeDeRespuesta = client.target("http://rest-service:8080/app-rest/api/saludo")
+            this.mensajeDeRespuesta = client.target("http://rest-service:8080/api/saludo")
                     .request()
                     .get(String.class);
         } catch (Exception e) {

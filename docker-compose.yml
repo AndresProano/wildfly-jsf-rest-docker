@@ -1,6 +1,6 @@
 services:
   rest-service:
-    build: byandyx/deber1-rest-server
+    image: byandyx/deber1-rest-server:latest
     container_name: rest-container
     ports:
       - "8081:8080"
@@ -11,7 +11,7 @@ services:
       retries: 12
 
   jsf-service:
-    build: byandyx/deber1-jsf-server
+    image: byandyx/deber1-jsf-server:latest
     container_name: jsf-container
     ports:
       - "8080:8080"

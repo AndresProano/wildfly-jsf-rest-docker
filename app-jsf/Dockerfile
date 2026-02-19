@@ -1,7 +1,4 @@
 FROM quay.io/wildfly/wildfly:latest
 
-COPY target/app-jsf.war /opt/jboss/wildfly/standalone/deployments/
-
-EXPOSE 8080
-
+COPY app-jsf/target/app-jsf.war /opt/jboss/wildfly/standalone/deployments/ROOT.war
 CMD ["/opt/jboss/wildfly/bin/standalone.sh", "-b", "0.0.0.0"]

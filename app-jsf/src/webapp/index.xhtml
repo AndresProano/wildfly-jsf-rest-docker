@@ -7,10 +7,10 @@
     <h:form id="form">
         <!-- message below the button (block-level) -->
         <h:panelGroup id="msg" layout="block" style="margin-top:12px;">
-            <h:outputText value="#{userBean.message}"/>
+            <h:outputText value="#{saludoBean.mensajeDeRespuesta}"/>
         </h:panelGroup>
 
-        <h:commandButton value="Call Rest" action="#{userBean.restClient}">
+        <h:commandButton value="Call Rest" action="#{saludoBean.llamarAlRest}">
             <f:ajax render="msg"/>
         </h:commandButton>
     </h:form>
