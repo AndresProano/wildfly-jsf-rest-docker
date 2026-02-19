@@ -1,6 +1,6 @@
 # ⚡ Quick Start (2 minutos)
 
-## Si solo quieres ejecutar la app (Sin compilar)
+## A. Si solo quieres ejecutar la app (Sin compilar)
 
 ```bash
 # 1. Descargar imágenes
@@ -36,16 +36,28 @@ docker compose down
 
 ---
 
-## 👨‍💻 Si vas a compilar código
+## 👨‍💻 B. Si vas a compilar código
 
-```bash
-# Compilar
-mvn clean package
+Este repositorio incluye un archivo de referencia llamado:
+docker-compose-build.yml
+El objetivo de ese archivo es construir las imágenes localmente antes de subirlas a Docker Hub.
+```bash 
+# 1) Compilar los WAR (obligatorio antes del build Docker)
+cd app-rest && mvn clean package && cd ..
+cd app-jsf  && mvn clean package && cd ..
 
-# Subir a Docker Hub
+# 2) Construir y ejecutar con compose de build
+docker compose -f docker-compose-build.yml build --no-cache
+docker compose -f docker-compose-build.yml up -d
+
+# 3) Probar
+Interfaz Web (JSF): http://localhost:8080
+API REST:           http://localhost:8081/api/saludo
+
+# 4) Subir a Docker Hub
 ./deber1.sh push
 
-# Reiniciar
+# 5) Reiniciar
 docker compose pull && docker compose down && docker compose up -d
 ```
 

@@ -2,7 +2,7 @@
 
 ## 👥 Integrantes
 - Andrés Proaño (00326003)
-- NOMBRE AQUI
+- Pablo Alvarado (00344965)
 
 ---
 
@@ -74,6 +74,8 @@ docker compose pull
 Este comando descargará automáticamente las versiones correctas para tu arquitectura:
 - `linux/amd64` en Windows/Linux
 - `linux/arm64` en Mac con Apple Silicon
+
+Nota: Esto debe ejecutarse en la raiz del proyecto. Donde se encuentra el archivo docker-compose.yml
 
 #### ✅ Paso 3: Iniciar la aplicación
 
