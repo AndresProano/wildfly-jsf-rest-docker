@@ -1,7 +1,7 @@
 # Deber 1 - Jakarta EE + WildFly + Docker
 
 ## 👥 Integrantes
-- NOMBRE AQUI
+- Andrés Proaño (00326003)
 - NOMBRE AQUI
 
 ---
