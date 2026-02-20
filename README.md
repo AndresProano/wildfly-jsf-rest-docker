@@ -1,8 +1,8 @@
 # Deber 1 - Jakarta EE + WildFly + Docker
 
 ## 👥 Integrantes
-- Andrés Proaño (00326003)
-- Pablo Alvarado (00344965)
+- Andrés Proaño (00326003) - Colaboración: crear docker compose y cargar a docker hub el proyecto
+- Pablo Alvarado (00344965) - Colaboración:  crear Rest App y JSF
 
 ---
 
